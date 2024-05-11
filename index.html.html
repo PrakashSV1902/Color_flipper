@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+        <div id="box">
+            <button onclick="colorgenerator()">Click Me</button>
+            Color code <span id="hexvalue"></span>
+        </div>
+    </div>
+    
+
+
+
+    <style>
+        body{
+            margin: 0px;
+        }
+        #result{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #box{
+            /* width: 735px; */
+            height: 737px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+        button{
+            scale: 1.5;
+            margin: 50px;
+        }
+    </style>
+
+
+
+
+
+    <script>
+        function colorgenerator(){
+            let bgclr= document.getElementById("result")
+            let hexval=document.getElementById("hexvalue")
+            let hexformat="#"
+            for(i=1; i<=6; i++){
+                hexformat += randnum()
+            }
+            bgclr.style.backgroundColor = hexformat
+            hexval.innerHTML = hexformat
+           
+
+        }
+
+        function randnum(){
+            let arr=[0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+            let random=(Math.floor(Math.random()*16));
+            return arr[random] 
+        }
+
+
+        
+        
+        
+        
+
+
+        
+    </script>
+</body>
+</html>
